@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -63,5 +64,45 @@ public class AmazonStepDefinitions {
         String actualTitle=Driver.getDriver().getTitle();
         String expectedIcerik="Amazon";
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
+    }
+
+    @Given("Kullanici {string} anasayfaya gider")
+    public void kullaniciAnasayfayaGider(String istenenUrl) {
+        Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+
+    }
+
+    @Then("Arama sonuclarinin {string} icerdigini test eder")
+    public void aramaSonuclarininIcerdiginiTestEder(String expectedIcerik) {
+        String actualAramaSonucu=amazonPage.aramaSonucuElementi.getText();
+
+        Assert.assertTrue(actualAramaSonucu.contains(expectedIcerik));
+    }
+
+    @When("{string} icin arama yapar")
+    public void icinAramaYapar(String aranacakKelime) {
+        amazonPage.aramaKutusu.sendKeys(aranacakKelime+Keys.ENTER);
+    }
+
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int bekleneceksaniye) {
+
+        try {
+            Thread.sleep(1000*bekleneceksaniye);
+        } catch (InterruptedException e) {
+
+        }
+
+    }
+    @Then("ilk urune click yapar")
+    public void ilk_urune_click_yapar() {
+        amazonPage.ilkUrunElementi.click();
+    }
+    @Then("acilan urun isminin {string} icerdigini test eder")
+    public void acilan_urun_isminin_icerdigini_test_eder(String arananKelime) {
+        String actualUrunIsmi= amazonPage.ilkUrunIsimElementi.getText();
+
+        Assert.assertTrue(actualUrunIsmi.contains(arananKelime));
+
     }
 }

@@ -5,20 +5,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class qualitydemyPage {
+public class QualitydemyPage {
 
-    public qualitydemyPage(){
+    public QualitydemyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    @FindBy(xpath = "//a[@onclick='cookieAccept();']")
+    public WebElement cookie;
     @FindBy(xpath = "//*[text()='Log in']")
-   public WebElement logInKutusu;
+    public WebElement ilkLoginLinki;
 
     @FindBy(xpath = "//input[@name='email']")
-    public WebElement eMailKutusu;
-    @FindBy(xpath = "//input[@type='password']")
-   public WebElement passwordKutusu;
+    public WebElement emailKutusu;
+
+    @FindBy(xpath = "//input[@id='login-password']")
+    public WebElement passwordKutusu;
+
     @FindBy(xpath = "//button[text()='Login']")
-    public WebElement ikinciLoginButtonu;
+    public WebElement loginButonu;
+
     @FindBy(xpath = "//a[text()='Instructor']")
-     public WebElement basariliGirisKontrolElementi;
+    public WebElement basariliGirisKontrolElementi;
 }

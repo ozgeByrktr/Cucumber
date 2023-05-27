@@ -9,16 +9,16 @@ Feature: US1003 BackGround kullanarak tekrarlardan kurtulur
     Then Arama sonuclarinin Nutella icerdigini test eder
     And Sayfayi kapatir
 
-
+   @smoke
   Scenario: TC06 Amazon Java Testi
 
-    When Java icin arama yapar
-    Then Arama sonuclarinin Java icerdigini test eder
+    When "Java" icin arama yapar
+    Then Arama sonuclarinin "Java" icerdigini test eder
     And Sayfayi kapatir
 
+    @regression
+  Scenario: TC07 Amazon Samsung Testi
 
-  Scenario: TC07 Amazon Java Testi
-
-    When Samsung icin arama yapar
-    Then Arama sonuclarinin Samsung icerdigini test eder
+    When "Samsung" icin arama yapar
+    Then Arama sonuclarinin "Samsung" icerdigini test eder
     And Sayfayi kapatir

@@ -1,3 +1,4 @@
+@wip
 Feature: US1005 kullanici butonlari test eder
 
   Scenario: TC11 kullanici butonlari ve cikan yazilari test eder
@@ -6,12 +7,12 @@ Feature: US1005 kullanici butonlari test eder
 
     Then Add Element butonuna basar
 
-    And Deletebutonu gorunur oluncaya kadar bekler
+    And  Deletebutonu gorunur oluncaya kadar bekler
 
-    And Delete butonunun gorunur oldugunu test eder
+    And  Delete butonunun gorunur oldugunu test eder
 
-    Then  Delete butonuna basarak butonu siler
+    Then Delete butonuna basarak butonu siler
 
-    And   Delete butonunun gorunmedigini test eder
+    And  Delete butonunun gorunmedigini test eder
 
-    And Sayfayi kapatir
+    And  Sayfayi kapatir
