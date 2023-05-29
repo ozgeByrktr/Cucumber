@@ -15,7 +15,7 @@ Feature: 1001_Cucumber Amazon Search Test
     Then Arama sonuclarinin Java icerdigini test eder
     And Sayfayi kapatir
 
-  Scenario: TC03 Amazon Java Testi
+  Scenario: TC03 Amazon Samsung Testi
 
     Given Kullanici amazon anasayfaya gider
     When Samsung icin arama yapar
