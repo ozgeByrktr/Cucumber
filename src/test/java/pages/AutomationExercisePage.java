@@ -29,4 +29,13 @@ public class AutomationExercisePage {
 
     @FindBy(xpath = "//b[text()='Account Created!']")
     public WebElement accountCreatedYaziElementi;
+
+    @FindBy(xpath = "//input[@data-qa='login-email']")
+    public WebElement loginEmailKutusu;
+
+    @FindBy(xpath = "//input[@data-qa='login-password']")
+    public WebElement loginPasswordKutusu;
+
+    @FindBy(xpath = "//button[@data-qa='login-button']")
+    public WebElement loginButonu;
 }

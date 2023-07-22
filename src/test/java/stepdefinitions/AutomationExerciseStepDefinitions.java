@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -82,4 +83,14 @@ public class AutomationExerciseStepDefinitions {
 
     }
 
+
+    @And("email kutusuna @isareti olmayan email adresi yazar ve enter’a tiklar")
+    public void emailKutusunaIsaretiOlmayanEmailAdresiYazarVeEnterATiklar() {
+        automationExercisePage.loginEmailKutusu.sendKeys("ayhvflp"+Keys.ENTER);
+    }
+
+    @Then("error mesajinin “Invalid email address” oldugunu dogrulayin")
+    public void errorMesajininInvalidEmailAddressOldugunuDogrulayin() {
+
+    }
 }
